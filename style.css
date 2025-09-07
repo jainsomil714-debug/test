@@ -1,0 +1,124 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    text-align: center;
+    background: radial-gradient(circle at top, #0f2027, #203a43, #2c5364);
+    font-family: 'Trebuchet MS', Arial, sans-serif;
+    overflow-x: hidden;
+}
+
+
+h1 {
+    font-size: clamp(28px, 6vw, 60px);
+    color: goldenrod;
+    text-shadow: 4px 4px 6px black;
+    margin-top: 20px;
+}
+
+#message {
+    font-size: clamp(18px, 4vw, 28px);
+    font-weight: bold;
+    margin: 15px 0;
+    color: #ffdd57;
+    text-shadow: 2px 2px 5px black;
+}
+
+
+#div1 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    width: min(90vw, 500px);
+    height: min(90vw, 500px);
+    margin: 40px auto;
+    border: 3px solid black;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0px 0px 20px rgba(0,0,0,0.6);
+}
+
+
+.div2 {
+    border: 3px solid black;
+    background-image: linear-gradient(to bottom right, #004e92, #000428);
+    font-size: clamp(30px, 12vw, 80px);
+    color: goldenrod;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s;
+    cursor: pointer;
+}
+.div2:hover {
+    background-image: linear-gradient(to bottom right, #0077ff, #00264d);
+}
+
+.winner {
+    background-image: linear-gradient(to bottom right, #00c853, #009624) !important;
+    color: white !important;
+    text-shadow: 2px 2px 10px black;
+    animation: glow 1s infinite alternate;
+}
+@keyframes glow {
+    from { box-shadow: 0 0 10px #00ff80; }
+    to { box-shadow: 0 0 25px #00ff80; }
+}
+
+#person1, #person2 {
+    height: clamp(80px, 18vw, 120px);
+    width: clamp(150px, 35vw, 220px);
+    background-image: linear-gradient(to bottom right, #0f9b0f, #000428);
+    border: 3px solid black;
+    border-radius: 15px;
+    font-size: clamp(22px, 5vw, 45px);
+    text-transform: uppercase;
+    color: goldenrod;
+    text-shadow: 3px 3px 5px black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 3px 3px 10px rgba(0,0,0,0.7);
+    margin: 10px;
+}
+
+.players {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+#reset {
+    padding: 10px 20px;
+    font-size: clamp(14px, 3vw, 18px);
+    text-transform: uppercase;
+    border: 3px solid black;
+    border-radius: 10px;
+    background: linear-gradient(to right, #ff416c, #ff4b2b);
+    color: white;
+    font-weight: bold;
+    transition: 0.3s;
+    margin-bottom: 30px;
+}
+#reset:hover {
+    background: linear-gradient(to right, #ff4b2b, #ff416c);
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+.active {
+    box-shadow: 0 0 20px 5px #ffdd57, 0 0 40px 10px #ffdd57;
+    animation: turnGlow 1s infinite alternate;
+    border: 3px solid #ffdd57 !important;
+}
+
+@keyframes turnGlow {
+    from { box-shadow: 0 0 15px #ffdd57; }
+    to { box-shadow: 0 0 35px #ffd700; }
+}
